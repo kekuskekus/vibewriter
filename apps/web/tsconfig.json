@@ -14,7 +14,11 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@focus-writer/shared": ["../../packages/shared/src/types.ts"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

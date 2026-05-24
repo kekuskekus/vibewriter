@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@focus-writer/shared": "workspace:*",
+    "@focus-writer/shared": "file:../../packages/shared",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

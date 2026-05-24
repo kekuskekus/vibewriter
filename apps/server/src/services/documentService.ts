@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile, unlink, stat } from 'fs/promises';
 import { join } from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { Document, DocumentMeta } from '@focus-writer/shared';
+import { Document, DocumentMeta } from '../types.js';
 import { STORAGE_BASE, DRAFTS_PATH, sanitizeFileName } from '../utils/storage.js';
 
 interface DocumentMetadata {

@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {

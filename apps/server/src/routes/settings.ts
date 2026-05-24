@@ -2,7 +2,7 @@ import { FastifyInstance } from 'fastify';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { homedir } from 'os';
-import { AppSettings } from '@focus-writer/shared';
+import { AppSettings } from '../types.js';
 
 const SETTINGS_FILE = join(homedir(), '.focus-writer', 'settings.json');
 
@@ -35,10 +35,11 @@ export async function settingsRoutes(app: FastifyInstance) {
   // PUT /api/settings - Update settings
   app.put<{ Body: any; Reply: any }>('/api/settings', async (request, reply) => {
     const settings = await loadSettings();
+    const body = request.body as any;
 
     // Update only allowed settings
-    if (request.body.affineSyncPath !== undefined) {
-      settings.affineSyncPath = request.body.affineSyncPath;
+    if (body?.affineSyncPath !== undefined) {
+      settings.affineSyncPath = body.affineSyncPath;
     }
 
     await saveSettings(settings);

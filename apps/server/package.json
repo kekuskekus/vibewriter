@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@focus-writer/shared": "workspace:*",
+    "@focus-writer/shared": "file:../../packages/shared",
     "fastify": "^4.25.2",
     "@fastify/cors": "^8.5.0",
     "@fastify/static": "^6.12.0",
