@@ -1,0 +1,75 @@
+.editor-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.editor-textarea {
+  flex: 1;
+  resize: none;
+  padding: 20px;
+  border: none;
+  background-color: #000000;
+  color: #00ff00;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.editor-textarea:focus {
+  outline: none;
+}
+
+.draft-restore-banner {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  right: 20px;
+  background-color: #001100;
+  border: 1px solid #ffff00;
+  border-radius: 4px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+  z-index: 100;
+}
+
+.draft-restore-message {
+  color: #ffff00;
+  margin-right: 20px;
+  flex: 1;
+}
+
+.draft-restore-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-restore,
+.btn-discard {
+  padding: 8px 15px;
+  border: 1px solid #ffff00;
+  background-color: #000000;
+  color: #ffff00;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.btn-restore:hover {
+  background-color: #002200;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.btn-discard:hover {
+  background-color: #1a0000;
+  border-color: #ff4444;
+  color: #ff4444;
+}

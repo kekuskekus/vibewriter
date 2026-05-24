@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  focus-writer:
+    build: .
+    ports:
+      - '${PORT:-3000}:3000'
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0
+      - STORAGE_PATH=/data/documents
+      - DRAFTS_PATH=/data/drafts
+      - EXPORTS_PATH=/data/exports
+      - AFFINE_SYNC_PATH=/data/affine-sync
+      - APP_AUTH_TOKEN=${APP_AUTH_TOKEN:-}
+    volumes:
+      - focus-writer-documents:/data/documents
+      - focus-writer-drafts:/data/drafts
+      - focus-writer-exports:/data/exports
+      - focus-writer-affine:/data/affine-sync
+    restart: unless-stopped
+
+volumes:
+  focus-writer-documents:
+  focus-writer-drafts:
+  focus-writer-exports:
+  focus-writer-affine:
